@@ -1,12 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
-
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
 
     const { handleRegister } = useContext(AuthContext)
+    const [eyes, setEyes] = useState(true)
 
+    const [pass, setPass] = useState('password')
     const handleRegisterSubmit = e => {
         e.preventDefault();
         const form = new FormData(e.target);
@@ -18,6 +21,16 @@ const Register = () => {
             console.log(result.user)
         })
         .catch(error => console.error(error))
+    }
+
+    const handleEye = () => {
+        setEyes(!eyes);
+        if(eyes){
+            setPass('text')
+        }
+        else{
+            setPass('password')
+        }
     }
 
     return (
@@ -39,6 +52,7 @@ const Register = () => {
                   className="input input-bordered"
                   required
                 />
+                
               </div>
               <div className="form-control">
                 <label className="label">
@@ -64,17 +78,22 @@ const Register = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control relative">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
                 <input
                   name="password"
-                  type="password"
+                  type={pass}
                   placeholder="Password"
                   className="input input-bordered"
                   required
                 />
+                <div onClick={handleEye} className=" text-xl absolute right-4 top-12">
+                {
+                    eyes == true ? <FaRegEye  /> : <FaRegEyeSlash/>
+                }
+                </div>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?

@@ -1,20 +1,27 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Nav = () => {
-  const { user } = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext)
     const navLinks = <>
      <li><NavLink to='/'>Home</NavLink></li>
      <li><NavLink to='/login'>Login</NavLink></li>
-     <li><NavLink to='/register'>Register</NavLink></li>
-     {
-      user && <li><NavLink to='/user'>User</NavLink></li>
-     }
+     <li><NavLink to='/update'>Update Profile</NavLink></li>
+     
     </>
+
+    const handleLogOut = () => {
+      toast("Logged Out !!!")
+      logOut()
+      .then(() => {
+        
+      })
+      .catch(error => console.log(error))
+    }
   return (
-    <nav className="navbar bg-base-100 mb-8">
+    <nav className="navbar my-8 bg-base-100 mb-8">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,14 +50,25 @@ const Nav = () => {
         <a className="btn btn-ghost text-xl">Comfort Estates</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 space-x-3">
           
          {navLinks}
         </ul>
       </div>
       <div className="navbar-end">
-       <NavLink to='/login'>Login</NavLink>
+      {
+        user ? <>
+         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full ">
+          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        </div>
       </div>
+        <button onClick={handleLogOut} className=" ml-3 btn btn-primary">Log Out</button>
+        </> : 
+         <NavLink className={'btn btn-secondary'} to='/login'>Login</NavLink>
+      }
+      </div>
+      <ToastContainer></ToastContainer>
     </nav>
   );
 };

@@ -20,17 +20,17 @@ const Card = ({ data }) => {
           <p className="text-lg font-semibold">Location : {location}</p>
           <p className="text-2xl font-bold">Price : {price}</p>
         </div>
-        <div className="">
+        {/* <div className="">
           <h2 className="text-xl font-bold">Facilities : </h2>
          <ul className="list-disc list-inside flex-grow">
          {
             facilities.map((f,i) => <li key={i} className="">{f}</li>)
           }
          </ul>
-        </div>
+        </div> */}
         
         <div className="card-actions ">
-          <button className="btn btn-primary">Buy Now</button>
+          <button className="btn btn-primary">View Property</button>
         </div>
       </div>
     </div>

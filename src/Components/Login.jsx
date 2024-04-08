@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
-    const { handleLogin } = useContext(AuthContext);
+    const { handleLogin, googleLogin, githubLogin } = useContext(AuthContext);
 
     const handleLoginSubmit = e => {
         e.preventDefault();
@@ -13,6 +14,18 @@ const Login = () => {
         const password = form.get('password');
         console.log(email, password)
         handleLogin(email, password)
+        .then(result => console.log(result.user))
+        .catch(error => toast(error.message))
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => console.log(result.user))
+        .catch(error => console.log(error))
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin()
         .then(result => console.log(result.user))
         .catch(error => console.log(error))
     }
@@ -59,12 +72,13 @@ const Login = () => {
             </div>
           </form>
          <div className="px-8 mb-4 space-x-4">
-         <button className="btn btn-secondary w-[150px]  font-semibold">Google Login</button>
-         <button className="btn btn-secondary w-[150px]  font-semibold">Github Login</button>
+         <button onClick={handleGoogleLogin} className="btn btn-secondary w-[150px]  font-semibold">Google Login</button>
+         <button onClick={handleGithubLogin} className="btn btn-secondary w-[150px]  font-semibold">Github Login</button>
          </div>
             <p className="px-8 pb-6">Dont have any account?? Please <Link className='underline font-bold text-blue-700' to='/register'>Register</Link></p>
         </div>
       </div> 
+      <ToastContainer/>
     </div>
   );
 };
