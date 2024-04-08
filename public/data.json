@@ -1,0 +1,366 @@
+[
+  [
+    {
+      "name": "single_family_homes",
+      "img": "https://i.ibb.co/G52cQVj/single1.jpg",
+      "id": 1,
+      "estate_title": "Cozy Suburban House",
+      "segment_name": "Single-family homes",
+      "description": "Charming single-family home located in a peaceful suburban neighborhood.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Suburbs",
+      "facilities": ["living room", "kitchen", "backyard"]
+    },
+    {
+      "name": "single_family_homes",
+      "img": "https://i.ibb.co/nsysfGV/2.png",
+      "id": 2,
+      "estate_title": "Modern Urban Residence",
+      "segment_name": "Single-family homes",
+      "description": "Stylish single-family home in the heart of the city with contemporary design and rooftop terrace.",
+      "price": "$700,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "City Center",
+      "facilities": ["living room", "kitchen", "rooftop terrace"]
+    },
+    {
+      "name": "single_family_homes",
+      "img": "https://i.ibb.co/HKhYftm/3.jpg",
+      "id": 3,
+      "estate_title": "Spacious Family House",
+      "segment_name": "Single-family homes",
+      "description": "Large single-family home perfect for a growing family, featuring multiple bedrooms and a spacious backyard.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Suburbs",
+      "facilities": ["living room", "kitchen", "backyard"]
+    },
+    {
+      "name": "single_family_homes",
+      "img": "https://i.ibb.co/PMTGPk3/4.jpg",
+      "id": 4,
+      "estate_title": "Riverside Retreat",
+      "segment_name": "Single-family homes",
+      "description": "Beautiful riverside single-family home offering serene views and tranquil living.",
+      "price": "$900,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "Riverside",
+      "facilities": ["living room", "kitchen", "backyard", "river access"]
+    }
+  ],
+  [
+    {
+      "name": "townhouses",
+      "img": "https://i.ibb.co/N2LGdgq/5.png",
+      "id": 5,
+      "estate_title": "Modern Townhouse",
+      "segment_name": "Townhouses",
+      "description": "Contemporary townhouse featuring sleek design and urban living at its finest.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "Downtown",
+      "facilities": ["living room", "kitchen", "rooftop terrace"]
+    },
+    {
+      "name": "townhouses",
+      "img": "https://i.ibb.co/q1ggvsq/6.jpg",
+      "id": 6,
+      "estate_title": "Cozy Townhome",
+      "segment_name": "Townhouses",
+      "description": "Charming townhome with a cozy atmosphere and convenient access to local amenities.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "Suburbs",
+      "facilities": ["living room", "kitchen", "backyard"]
+    },
+    {
+      "name": "townhouses",
+      "img": "https://i.ibb.co/n6NnLhB/7.jpg",
+      "id": 7,
+      "estate_title": "Riverside Townhouse",
+      "segment_name": "Townhouses",
+      "description": "Townhouse situated by the riverbank, offering picturesque views and serene living.",
+      "price": "$800,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "Riverside",
+      "facilities": ["living room", "kitchen", "backyard", "river access"]
+    },
+    {
+      "name": "townhouses",
+      "img": "https://i.ibb.co/Z2qZD7Z/8.jpg",
+      "id": 8,
+      "estate_title": "Luxury Townhome",
+      "segment_name": "Townhouses",
+      "description": "Luxurious townhome with high-end finishes and exclusive amenities.",
+      "price": "$1,000,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Upscale Neighborhood",
+      "facilities": ["living room", "kitchen", "swimming pool", "gym"]
+    }
+  ],
+  [
+    {
+      "name": "apartments",
+      "img": "https://i.ibb.co/9VwKFMp/9.jpg",
+      "id": 9,
+      "estate_title": "Modern City Apartment",
+      "segment_name": "Apartments",
+      "description": "Sleek and modern apartment located in the heart of the city, offering convenience and style.",
+      "price": "$800,000",
+      "status": "sale",
+      "area": "1200 sq ft",
+      "location": "Downtown",
+      "facilities": ["living room", "kitchen", "balcony"]
+    },
+    {
+      "name": "apartments",
+      "img": "https://i.ibb.co/pzb8g87/10.jpg",
+      "id": 10,
+      "estate_title": "Luxury Penthouse",
+      "segment_name": "Apartments",
+      "description": "Elegant penthouse apartment with breathtaking views and luxurious amenities.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "High-Rise Building",
+      "facilities": [
+        "living room",
+        "kitchen",
+        "rooftop terrace",
+        "swimming pool"
+      ]
+    },
+    {
+      "name": "apartments",
+      "img": "https://i.ibb.co/VNRqWNL/11.png",
+      "id": 11,
+      "estate_title": "Cozy Studio Apartment",
+      "segment_name": "Apartments",
+      "description": "Compact and comfortable studio apartment ideal for singles or couples.",
+      "price": "$300,000",
+      "status": "sale",
+      "area": "600 sq ft",
+      "location": "Urban Area",
+      "facilities": ["living area", "kitchenette"]
+    },
+    {
+      "name": "apartments",
+      "img": "https://i.ibb.co/txYYWcN/12.jpg",
+      "id": 12,
+      "estate_title": "Riverside Apartment",
+      "segment_name": "Apartments",
+      "description": "Charming apartment overlooking the river, providing a peaceful retreat in the city.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "1000 sq ft",
+      "location": "Riverside",
+      "facilities": ["living room", "kitchen", "balcony"]
+    }
+  ],
+  [
+    {
+      "name": "student_housing",
+      "img": "https://i.ibb.co/23tPWJX/13.jpg",
+      "id": 13,
+      "estate_title": "Campus Dormitory",
+      "segment_name": "Student Housing",
+      "description": "Basic dormitory-style accommodation conveniently located on campus, ideal for students.",
+      "price": "$500/month",
+      "status": "rent",
+      "area": "200 sq ft (per room)",
+      "location": "University Campus",
+      "facilities": [
+        "shared living area",
+        "shared kitchen",
+        "laundry facilities"
+      ]
+    },
+    {
+      "name": "student_housing",
+      "img": "https://i.ibb.co/44yw1VW/14.jpg",
+      "id": 14,
+      "estate_title": "Student Apartment Complex",
+      "segment_name": "Student Housing",
+      "description": "Apartment complex designed for student living, offering private bedrooms and shared common areas.",
+      "price": "$700/month",
+      "status": "rent",
+      "area": "400 sq ft (per unit)",
+      "location": "Near University",
+      "facilities": [
+        "private bedroom",
+        "shared living room",
+        "shared kitchen",
+        "fitness center"
+      ]
+    },
+    {
+      "name": "student_housing",
+      "img": "https://i.ibb.co/NnrBP9M/15.jpg",
+      "id": 15,
+      "estate_title": "Student Co-op Housing",
+      "segment_name": "Student Housing",
+      "description": "Cooperative housing community where students live and work together, fostering a sense of community.",
+      "price": "$600/month",
+      "status": "rent",
+      "area": "250 sq ft (per room)",
+      "location": "Close to Campus",
+      "facilities": ["shared living area", "shared kitchen", "community events"]
+    },
+    {
+      "name": "student_housing",
+      "img": "https://i.ibb.co/w4MnZF3/16.jpg",
+      "id": 16,
+      "estate_title": "Student Studio Apartment",
+      "segment_name": "Student Housing",
+      "description": "Compact studio apartment tailored for student living, providing privacy and convenience.",
+      "price": "$800/month",
+      "status": "rent",
+      "area": "300 sq ft",
+      "location": "University District",
+      "facilities": ["private bathroom", "kitchenette", "study area"]
+    }
+  ],
+  [
+    {
+      "name": "senior_living_communities",
+      "img": "https://i.ibb.co/nsysfGV/2.png",
+      "id": 17,
+      "estate_title": "Retirement Village",
+      "segment_name": "Senior Living Communities",
+      "description": "Gated retirement village offering independent living for seniors, with various amenities and social activities.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "900 sq ft (per unit)",
+      "location": "Suburban Area",
+      "facilities": [
+        "private apartment",
+        "community center",
+        "fitness classes",
+        "gardens"
+      ]
+    },
+    {
+      "name": "senior_living_communities",
+      "img": "https://i.ibb.co/23tPWJX/13.jpg",
+      "id": 18,
+      "estate_title": "Assisted Living Facility",
+      "segment_name": "Senior Living Communities",
+      "description": "Assisted living facility providing personalized care and support services for seniors who need assistance with daily activities.",
+      "price": "$5,000/month",
+      "status": "rent",
+      "area": "1200 sq ft (per unit)",
+      "location": "Urban Area",
+      "facilities": [
+        "private room",
+        "24/7 nursing care",
+        "meal services",
+        "activity programs"
+      ]
+    },
+    {
+      "name": "senior_living_communities",
+      "img": "https://i.ibb.co/HKhYftm/3.jpg",
+      "id": 19,
+      "estate_title": "Memory Care Community",
+      "segment_name": "Senior Living Communities",
+      "description": "Specialized memory care community designed for seniors with Alzheimer's or dementia, offering a safe and supportive environment.",
+      "price": "$6,500/month",
+      "status": "rent",
+      "area": "1000 sq ft (per unit)",
+      "location": "Quiet Neighborhood",
+      "facilities": [
+        "secured environment",
+        "memory-enhancing activities",
+        "caregiver support"
+      ]
+    },
+    {
+      "name": "senior_living_communities",
+      "img": "https://i.ibb.co/N2LGdgq/5.png",
+      "id": 20,
+      "estate_title": "Continuing Care Retirement Community (CCRC)",
+      "segment_name": "Senior Living Communities",
+      "description": "CCRC offering a continuum of care services including independent living, assisted living, and skilled nursing care, providing seniors with peace of mind as they age.",
+      "price": "Varies",
+      "status": "rent/buy",
+      "area": "Varies",
+      "location": "Multiple Locations",
+      "facilities": [
+        "variety of living options",
+        "healthcare services",
+        "social activities"
+      ]
+    }
+  ],
+  [
+    {
+      "name": "vacation_rentals",
+      "img": "https://i.ibb.co/Z2qZD7Z/8.jpg",
+      "id": 21,
+      "estate_title": "Beachfront Villa",
+      "segment_name": "Vacation Rentals",
+      "description": "Luxurious beachfront villa with stunning ocean views, perfect for a tropical getaway.",
+      "price": "$500/night",
+      "status": "rent",
+      "area": "3000 sq ft",
+      "location": "Tropical Island",
+      "facilities": [
+        "private beach access",
+        "swimming pool",
+        "outdoor dining area"
+      ]
+    },
+    {
+      "name": "vacation_rentals",
+      "img": "https://i.ibb.co/N2LGdgq/5.png",
+      "id": 22,
+      "estate_title": "Mountain Cabin Retreat",
+      "segment_name": "Vacation Rentals",
+      "description": "Cozy mountain cabin nestled in the woods, offering a serene escape from the hustle and bustle of city life.",
+      "price": "$300/night",
+      "status": "rent",
+      "area": "1500 sq ft",
+      "location": "Mountain Range",
+      "facilities": ["scenic views", "fireplace", "hiking trails nearby"]
+    },
+    {
+      "name": "vacation_rentals",
+      "img": "https://i.ibb.co/PMTGPk3/4.jpg",
+      "id": 23,
+      "estate_title": "City Apartment",
+      "segment_name": "Vacation Rentals",
+      "description": "Modern city apartment in the heart of downtown, providing easy access to attractions, dining, and entertainment.",
+      "price": "$200/night",
+      "status": "rent",
+      "area": "1000 sq ft",
+      "location": "City Center",
+      "facilities": [
+        "urban views",
+        "walking distance to attractions",
+        "shopping and dining nearby"
+      ]
+    },
+    {
+      "name": "vacation_rentals",
+      "img": "https://i.ibb.co/pzb8g87/10.jpg",
+      "id": 24,
+      "estate_title": "Lake House Retreat",
+      "segment_name": "Vacation Rentals",
+      "description": "Quaint lake house overlooking serene waters, offering a peaceful retreat for relaxation and outdoor activities.",
+      "price": "$400/night",
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "Lakefront",
+      "facilities": ["private dock", "kayaks", "fire pit"]
+    }
+  ]
+]
