@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Card = ({ data }) => {
   console.log(data);
-  const { img, estate_title, id, status, location, price, description, area, facilities } = data;
+  const { img, estate_title, status, location, price, description, area, facilities } = data;
   return (
     <div className=" border rounded-2xl  mb-5 bg-base-100 shadow-2xl flex flex-col">
       <figure >

@@ -1,0 +1,72 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "./Provider/AuthProvider";
+
+const Login = () => {
+
+    const { handleLogin } = useContext(AuthContext);
+
+    const handleLoginSubmit = e => {
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email, password)
+        handleLogin(email, password)
+        .then(result => console.log(result.user))
+        .catch(error => console.log(error))
+    }
+
+  return (
+    <div className="hero py-12  bg-base-200">
+      <div className="hero-content flex-col  w-full">
+        <div className="text-center lg:text-left">
+          <h1 className="text-5xl font-bold mb-4">Login now!</h1>
+        </div>
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handleLoginSubmit} className="card-body w-full">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <input
+                name="email"
+                type="email"
+                placeholder="Email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Password</span>
+              </label>
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                className="input input-bordered"
+                required
+              />
+              <label className="label">
+                <a href="#" className="label-text-alt link link-hover">
+                  Forgot password?
+                </a>
+              </label>
+            </div>
+            <div className="form-control mt-6">
+              <button className="btn btn-primary">Login</button>
+            </div>
+          </form>
+         <div className="px-8 mb-4 space-x-4">
+         <button className="btn btn-secondary w-[150px]  font-semibold">Google Login</button>
+         <button className="btn btn-secondary w-[150px]  font-semibold">Github Login</button>
+         </div>
+            <p className="px-8 pb-6">Dont have any account?? Please <Link className='underline font-bold text-blue-700' to='/register'>Register</Link></p>
+        </div>
+      </div> 
+    </div>
+  );
+};
+
+export default Login;
