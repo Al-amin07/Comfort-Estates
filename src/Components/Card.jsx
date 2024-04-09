@@ -1,8 +1,13 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { AuthContext } from "./Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
+
+  const { handleProperty } = useContext(AuthContext)
   console.log(data);
-  const { img, estate_title, status, location, price, description, area, facilities } = data;
+  const { img, estate_title, status, location, price, description, area } = data;
   return (
     <div className=" border rounded-2xl  mb-5 bg-base-100 shadow-2xl flex flex-col">
       <figure >
@@ -30,7 +35,9 @@ const Card = ({ data }) => {
         </div> */}
         
         <div className="card-actions ">
-          <button className="btn btn-primary">View Property</button>
+          <Link to='/property'>
+          <button onClick={() => handleProperty(data)} className="btn btn-primary">View Property</button>
+          </Link>
         </div>
       </div>
     </div>

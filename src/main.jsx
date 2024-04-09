@@ -14,6 +14,8 @@ import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
 import AuthProvider from './Components/Provider/AuthProvider.jsx';
 import Update from './Components/Update.jsx';
+import ViewProperty from './Components/ViewProperty.jsx';
+import Private from './Components/Provider/Private.jsx';
 
 
 const router = createBrowserRouter([
@@ -38,6 +40,12 @@ const router = createBrowserRouter([
       {
         path: '/update',
         element: <Update></Update>
+      },
+      {
+        path: '/property',
+        element: <Private>
+          <ViewProperty></ViewProperty>
+        </Private>
       }
     ]
   }

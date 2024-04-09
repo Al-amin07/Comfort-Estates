@@ -12,7 +12,7 @@ const Login = () => {
         const form = new FormData(e.target);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password)
+        
         handleLogin(email, password)
         .then(result => console.log(result.user))
         .catch(error => toast(error.message))

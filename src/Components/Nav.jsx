@@ -3,20 +3,22 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import '../Components/'
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext)
     const navLinks = <>
-     <li><NavLink to='/'>Home</NavLink></li>
-     <li><NavLink to='/login'>Login</NavLink></li>
-     <li><NavLink to='/update'>Update Profile</NavLink></li>
+     <li className="text-lg font-semibold"><NavLink to='/'>Home</NavLink></li>
+     <li className="text-lg font-semibold"><NavLink to='/login'>Login</NavLink></li>
+     <li className="text-lg font-semibold"><NavLink to='/update'>Update Profile</NavLink></li>
      
     </>
 
     const handleLogOut = () => {
-      toast("Logged Out !!!")
+     
       logOut()
       .then(() => {
-        
+        // toast("Logged Out !!!")
+        alert('Logged Out!!!')
       })
       .catch(error => console.log(error))
     }
