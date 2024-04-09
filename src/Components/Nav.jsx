@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import '../Components/'
+
 const Nav = () => {
   const { user, logOut } = useContext(AuthContext)
     const navLinks = <>
      <li className="text-lg font-semibold"><NavLink to='/'>Home</NavLink></li>
      <li className="text-lg font-semibold"><NavLink to='/login'>Login</NavLink></li>
      <li className="text-lg font-semibold"><NavLink to='/update'>Update Profile</NavLink></li>
+     <li className="text-lg font-semibold"><NavLink to='/maps'>Our Location</NavLink></li>
      
     </>
 
@@ -52,7 +53,7 @@ const Nav = () => {
         <a className="btn btn-ghost text-xl">Comfort Estates</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-3">
+        <ul className="menu menu-horizontal px-1 space-x-2">
           
          {navLinks}
         </ul>

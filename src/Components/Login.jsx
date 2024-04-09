@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,15 +7,21 @@ const Login = () => {
 
     const { handleLogin, googleLogin, githubLogin } = useContext(AuthContext);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location)
+
     const handleLoginSubmit = e => {
         e.preventDefault();
         const form = new FormData(e.target);
         const email = form.get('email');
         const password = form.get('password');
         
+        
         handleLogin(email, password)
-        .then(result => console.log(result.user))
-        .catch(error => toast(error.message))
+        .then(() => navigate(location?.state ? location.state : '/'))
+        .catch(error => toast(error.message));
+
     }
 
     const handleGoogleLogin = () => {

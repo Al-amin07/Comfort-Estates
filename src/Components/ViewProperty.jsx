@@ -4,16 +4,17 @@ import { AuthContext } from "./Provider/AuthProvider";
 const ViewProperty = () => {
   const { viewData } = useContext(AuthContext);
   console.log(viewData);
-  const { img, estate_title, status, location, price, description, area, facilities  } = viewData;
+  const { img, estate_title, status, location, price, description, area, facilities, segment_name  } = viewData;
 
   return (
-    <div className="flex gap-8 shadow-2xl px-6 py-12 rounded-2xl   ">
+    <div className="flex gap-8 shadow-2xl px-6 py-8 rounded-2xl   ">
       <div className="">
         <img className="h-[450px] rounded-lg" src={img} alt="" />
       </div>
       <div className="w-1/2">
         <h2 className="text-5xl font-bold">{estate_title}</h2>
         <p className="text-slate-600 text-lg my-4">{description}</p>
+        <p className="text-xl font-semibold mb-4">Category : {segment_name}</p>
         <div className="flex justify-between">
           <p className="text-2xl font-semibold">Status : {status}</p>
           <p className="text-2xl font-semibold">Area : {area}</p>
