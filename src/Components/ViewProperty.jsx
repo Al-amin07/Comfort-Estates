@@ -7,7 +7,7 @@ const ViewProperty = () => {
   const { img, estate_title, status, location, price, description, area, facilities  } = viewData;
 
   return (
-    <div className="flex gap-6 shadow-2xl px-8 py-12 rounded-2xl   ">
+    <div className="flex gap-8 shadow-2xl px-6 py-12 rounded-2xl   ">
       <div className="">
         <img className="h-[450px] rounded-lg" src={img} alt="" />
       </div>
