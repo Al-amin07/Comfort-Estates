@@ -1,28 +1,43 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Nav = () => {
-  const { user, logOut } = useContext(AuthContext)
-    const navLinks = <>
-     <li className="text-lg font-semibold"><NavLink to='/'>Home</NavLink></li>
-     <li className="text-lg font-semibold"><NavLink to='/login'>Login</NavLink></li>
-     <li className="text-lg font-semibold"><NavLink to='/update'>Update Profile</NavLink></li>
-     <li className="text-lg font-semibold"><NavLink to='/maps'>Our Location</NavLink></li>
-     
-    </>
+  const { user, logOut} = useContext(AuthContext);
 
-    const handleLogOut = () => {
-     
-      logOut()
+  // const [name, setName] = useState(null);
+  
+
+ 
+
+  const navLinks = (
+    <>
+      <li className="text-lg font-semibold">
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li className="text-lg font-semibold">
+        <NavLink to="/login">Login</NavLink>
+      </li>
+      <li className="text-lg font-semibold">
+        <NavLink to="/update">Update Profile</NavLink>
+      </li>
+      <li className="text-lg font-semibold">
+        <NavLink to="/maps">Our Location</NavLink>
+      </li>
+    </>
+  );
+
+  const handleLogOut = () => {
+    logOut()
       .then(() => {
         // toast("Logged Out !!!")
-        alert('Logged Out!!!')
+        alert("Logged Out!!!");
       })
-      .catch(error => console.log(error))
-    }
+      .catch((error) => console.log(error));
+  };
   return (
     <nav className="navbar my-8 bg-base-100 mb-8">
       <div className="navbar-start">
@@ -47,29 +62,33 @@ const Nav = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-        {navLinks}
+            {navLinks}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">Comfort Estates</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 space-x-2">
-          
-         {navLinks}
-        </ul>
+        <ul className="menu menu-horizontal px-1 space-x-2">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-      {
-        user ? <>
-         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full ">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-      </div>
-        <button onClick={handleLogOut} className=" ml-3 btn btn-primary">Log Out</button>
-        </> : 
-         <NavLink className={'btn btn-secondary'} to='/login'>Login</NavLink>
-      }
+        {user ? (
+          <>
+            
+            <div className="tooltip w-10 rounded-full btn btn-ghost btn-circle avatar" data-tip={''}>
+           <img
+                alt="Tailwind CSS Navbar component"
+                  src={''}
+                />
+            </div>
+            <button onClick={handleLogOut} className="ml-3 btn btn-primary">
+              Log Out
+            </button>
+          </>
+        ) : (
+          <NavLink className={"btn btn-secondary"} to="/login">
+            Login
+          </NavLink>
+        )}
       </div>
       <ToastContainer></ToastContainer>
     </nav>

@@ -3,22 +3,48 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import { FaRegEye } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase/Firebase.config";
 
 const Register = () => {
 
     const { handleRegister } = useContext(AuthContext)
-    const [eyes, setEyes] = useState(true)
+    const [eyes, setEyes] = useState(true);
 
     const [pass, setPass] = useState('password')
     const handleRegisterSubmit = e => {
         e.preventDefault();
         const form = new FormData(e.target);
         const email = form.get('email');
-        const password = form.get('password')
-        console.log(email, password);
+        const password = form.get('password');
+        const name = form.get('name');
+        const photo = form.get('photo')
+        if(!/[A-Z]/.test(password)){
+          toast('Please Enter Uppercase');
+          return;
+        }
+        if(!/[a-z]/.test(password)){
+          toast('Please Enter Lowercase');
+          return;
+        }
+        if(password.length < 6){
+          toast('Pass Must be 6 Char');
+          return;
+        }
+       
+        
         handleRegister(email, password)
         .then(result => {
-            console.log(result.user)
+            console.log(result.user.email              )
+            updateProfile(auth.currentUser, {
+              displayName: name, photoURL: photo
+            })
+            .then(()=> {
+             
+            })
+            .catch(error => console.log(error))
         })
         .catch(error => console.error(error))
     }
@@ -108,6 +134,7 @@ const Register = () => {
               <p className="px-8 pb-6">Already have an account?? Please <Link className='underline font-bold text-blue-700' to='/login'>Login</Link></p>
           </div>
         </div> 
+        <ToastContainer/>
       </div>
     );
 };

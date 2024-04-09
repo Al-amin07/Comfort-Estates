@@ -4,7 +4,7 @@ import Banner from "./Banner";
 
 const Home = () => {
   const allData = useLoaderData();
-  console.log(allData);
+  
   return (
     <div>
       <div>

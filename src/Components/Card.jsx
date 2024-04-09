@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Card = ({ data }) => {
 
   const { handleProperty } = useContext(AuthContext)
-  console.log(data);
+  
   const { img, estate_title, status, location, price, description, area } = data;
   return (
     <div className=" border rounded-2xl  mb-5 bg-base-100 shadow-2xl flex flex-col">

@@ -9,7 +9,7 @@ const Login = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location)
+  // console.log(location)
 
     const handleLoginSubmit = e => {
         e.preventDefault();
@@ -19,10 +19,14 @@ const Login = () => {
         
         
         handleLogin(email, password)
-        .then(() => navigate(location?.state ? location.state : '/'))
+        .then((result) => {
+          console.log(result.user)
+         return navigate(location?.state ? location.state : '/')
+        })
         .catch(error => toast(error.message));
 
     }
+   
 
     const handleGoogleLogin = () => {
         googleLogin()
