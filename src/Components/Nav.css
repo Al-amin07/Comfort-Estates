@@ -1,4 +1,5 @@
 nav a.active{
-    background-color: cadetblue;
-    color: palevioletred;
+  
+   border: 2px solid greenyellow;
+
 }

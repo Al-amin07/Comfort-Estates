@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import './Nav.css'
 
 const Nav = () => {
-  const { user, logOut} = useContext(AuthContext);
+  const { user, logOut, name, photo} = useContext(AuthContext);
 
   // const [name, setName] = useState(null);
   
@@ -15,17 +15,17 @@ const Nav = () => {
 
   const navLinks = (
     <>
-      <li className="text-lg font-semibold">
-        <NavLink to="/">Home</NavLink>
+      <li  >
+        <NavLink className={'btn btn-outline '}  to="/">Home</NavLink>
       </li>
-      <li className="text-lg font-semibold">
-        <NavLink to="/login">Login</NavLink>
+      <li >
+        <NavLink className={'btn btn-outline '} to="/login">Login</NavLink>
       </li>
-      <li className="text-lg font-semibold">
-        <NavLink to="/update">Update Profile</NavLink>
+      <li >
+        <NavLink className={'btn btn-outline '} to="/update">Update Profile</NavLink>
       </li>
-      <li className="text-lg font-semibold">
-        <NavLink to="/maps">Our Location</NavLink>
+      <li >
+        <NavLink className={'btn btn-outline '} to="/maps">Our Location</NavLink>
       </li>
     </>
   );
@@ -39,7 +39,7 @@ const Nav = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <nav className="navbar my-8 bg-base-100 mb-8">
+    <nav className="navbar my-8   mb-8">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -74,10 +74,11 @@ const Nav = () => {
         {user ? (
           <>
             
-            <div className="tooltip w-10 rounded-full btn btn-ghost btn-circle avatar" data-tip={''}>
+            <div className="tooltip w-10 rounded-full btn btn-ghost btn-circle avatar" data-tip={name}>
            <img
+           className="rounded-full"
                 alt="Tailwind CSS Navbar component"
-                  src={''}
+                  src={photo}
                 />
             </div>
             <button onClick={handleLogOut} className="ml-3 btn btn-primary">
@@ -85,7 +86,7 @@ const Nav = () => {
             </button>
           </>
         ) : (
-          <NavLink className={"btn btn-secondary"} to="/login">
+          <NavLink className={"btn btn-primary"} to="/login">
             Login
           </NavLink>
         )}

@@ -37,12 +37,12 @@ const Register = () => {
         
         handleRegister(email, password)
         .then(result => {
-            console.log(result.user.email              )
+            console.log(result.user.email)
             updateProfile(auth.currentUser, {
               displayName: name, photoURL: photo
             })
             .then(()=> {
-             
+             alert('SuccessFully Register!!!')
             })
             .catch(error => console.log(error))
         })
