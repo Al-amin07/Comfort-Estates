@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/update',
-        element: <Update></Update>
+        element: <Private><Update></Update></Private>
       },
       {
         path: '/property',
