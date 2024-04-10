@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './Nav.css'
+import 'animate.css';
 
 const Nav = () => {
   const { user, logOut, name, photo} = useContext(AuthContext);
@@ -16,16 +17,16 @@ const Nav = () => {
   const navLinks = (
     <>
       <li  >
-        <NavLink className={'btn btn-outline '}  to="/">Home</NavLink>
+        <NavLink className={'btn btn-ghost text-lg text-white font-bold'}  to="/">Home</NavLink>
       </li>
       <li >
-        <NavLink className={'btn btn-outline '} to="/login">Login</NavLink>
+        <NavLink className={'btn btn-ghost text-lg text-white font-bold'} to="/login">Login</NavLink>
       </li>
       <li >
-        <NavLink className={'btn btn-outline '} to="/update">Update Profile</NavLink>
+        <NavLink className={' btn btn-ghost text-lg text-white font-bold'} to="/update">Update Profile</NavLink>
       </li>
       <li >
-        <NavLink className={'btn btn-outline '} to="/maps">Our Location</NavLink>
+        <NavLink className={' btn btn-ghost text-lg text-white font-bold'} to="/maps">Our Location</NavLink>
       </li>
     </>
   );
@@ -39,7 +40,7 @@ const Nav = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <nav className="navbar my-8   mb-8">
+    <nav className="navbar animate__animated animate__fadeInUp  bg-[#393D45] px-4 py-5  text-white mb-8">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -65,7 +66,7 @@ const Nav = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Comfort Estates</a>
+        <a className="btn btn-ghost text-xl hover:bg-gray-500">Comfort Estates</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-2">{navLinks}</ul>
@@ -81,14 +82,14 @@ const Nav = () => {
                   src={photo}
                 />
             </div>
-            <button onClick={handleLogOut} className="ml-3 btn btn-primary">
+            <button onClick={handleLogOut} className="ml-3 btn btn-primary text-lg font-bold">
               Log Out
             </button>
           </>
         ) : (
-          <NavLink className={"btn btn-primary"} to="/login">
+          <Link className={"btn btn-primary text-lg font-bold"} to="/login">
             Login
-          </NavLink>
+          </Link>
         )}
       </div>
       <ToastContainer></ToastContainer>

@@ -6,8 +6,8 @@ import Nav from "./Nav";
 const Root = () => {
     return (
         <div>
-           <div className="max-w-7xl mx-auto">
            <Nav></Nav>
+           <div className="max-w-7xl mx-auto ">
            <Outlet></Outlet>
            </div>
            <Footer></Footer>

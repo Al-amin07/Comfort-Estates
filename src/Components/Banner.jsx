@@ -8,12 +8,13 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
  import "swiper/css/pagination";
  import "swiper/css/scrollbar";
  import 'swiper/css/effect-fade';
+ import 'animate.css';
 import { EffectFade } from 'swiper/modules';
 
 const Banner = () => {
   return (
     <Swiper
-      className="h-[650px] mb-24 rounded-2xl"
+      className="h-[650px] mb-24 rounded-2xl animate__animated animate__bounceInLeft"
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
       spaceBetween={50}
@@ -22,6 +23,7 @@ const Banner = () => {
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
+
       
       // onSwiper={(swiper) => console.log(swiper)}
       // onSlideChange={() => console.log('slide change')}

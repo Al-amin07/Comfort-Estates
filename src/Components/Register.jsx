@@ -10,7 +10,7 @@ import auth from "../Firebase/Firebase.config";
 
 const Register = () => {
 
-    const { handleRegister } = useContext(AuthContext)
+    const { handleRegister, logOut } = useContext(AuthContext)
     const [eyes, setEyes] = useState(true);
 
     const [pass, setPass] = useState('password')
@@ -42,6 +42,11 @@ const Register = () => {
               displayName: name, photoURL: photo
             })
             .then(()=> {
+              logOut()
+              .then(() => {
+
+              })
+              .catch(error => console.log(error))
              alert('SuccessFully Register!!!')
             })
             .catch(error => console.log(error))

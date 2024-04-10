@@ -1,5 +1,6 @@
 nav a.active{
   
-   border: 2px solid greenyellow;
+   color: #F47601;
+   border: 0;
 
 }
