@@ -17,6 +17,7 @@ import Update from './Components/Update.jsx';
 import ViewProperty from './Components/ViewProperty.jsx';
 import Private from './Components/Provider/Private.jsx';
 import Maps from './Components/Maps.jsx';
+import Price from './Components/Price.jsx';
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/licence',
+        element: <Private><Price></Price></Private>
       },
       {
         path: '/update',

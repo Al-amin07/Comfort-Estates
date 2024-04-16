@@ -1,13 +1,16 @@
 import { updateProfile } from "firebase/auth";
 import auth from "../Firebase/Firebase.config";
 import { ToastContainer, toast } from "react-toastify";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "./Provider/AuthProvider";
-import { Link } from "react-router-dom";
+
 
 const Update = () => {
-  const { user, setName, setPhoto } = useContext(AuthContext);
+  const { user, setName, setPhoto, photo, name } = useContext(AuthContext);
 
+  useEffect(() => {
+    document.title = "Update Profile | Comfort Estate";
+  }, [])
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -31,21 +34,8 @@ const Update = () => {
 
   return (
     <div>
-      {/* <div className="w-[700px] mx-auto shadow-2xl px-24 py-12 rounded-2xl mb-12 space-y-5">
-        <div className="flex justify-center gap-5">
-          <h2 className="text-3xl font-bold">Name : </h2>
-          <h2 className="text-3xl font-bold">{user.displayName}</h2>
-        </div>
-        <div className="flex justify-center gap-5">
-          <h2 className="text-3xl font-bold">Email : </h2>
-          <h2 className="text-3xl font-bold">{user.email}</h2>
-        </div>
-        <div className="flex justify-center gap-5">
-          <h2 className="text-3xl font-bold">Name : </h2>
-          <h2 className="text-3xl font-bold">{user.displayName}</h2>
-        </div>
-      </div> */}
-      <div>
+    
+      {/* <div>
       <form onSubmit={handleUpdate} className="card-body w-full">
               <div className="form-control">
                 <label className="label">
@@ -77,14 +67,15 @@ const Update = () => {
                 </button>
               </div>
             </form>
-      </div>
+      </div> */}
 
       <h2 className="text-3xl font-bold text-center mb-5">
         Update Your Profile
       </h2>
       <div className="hero py-8  bg-base-200">
         <div className="hero-content flex-col w-full">
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card shrink-0 w-full max-w-sm shadow-2xl pt-5 bg-base-100">
+         
             <form onSubmit={handleUpdate} className="card-body w-full">
               <div className="form-control">
                 <label className="label">
@@ -93,7 +84,7 @@ const Update = () => {
                 <input
                   name="uname"
                   type="text"
-                  placeholder="Name"
+                  placeholder={name}
                   className="input input-bordered"
                   required
                 />
@@ -105,9 +96,22 @@ const Update = () => {
                 <input
                   name="uphoto"
                   type="text"
-                  placeholder="Updated Photo Url"
+                  placeholder={photo}
                   className="input input-bordered"
                   required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder={user.email}
+                  className="input input-bordered"
+                  required
+                  disabled
                 />
               </div>
               <div className="form-control mt-6">

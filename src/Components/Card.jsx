@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
  import AOS from 'aos';
  import 'aos/dist/aos.css';
+//  let count = 0;
+//  let str = '';
 const Card = ({ data }) => {
   useEffect(() => {
     AOS.init({
@@ -13,10 +15,19 @@ const Card = ({ data }) => {
     })
   }, [])
 
-  const { handleProperty } = useContext(AuthContext)
+  const { handleProperty } = useContext(AuthContext);
+
   
   const { img, estate_title, location, price, description, area } = data;
+  // count++;
+  // if(count<4 || count> 6){
+  //   str = 'fade-left';
+  // }
+  // else {
+  //   str = 'fade-right'
+  // }
   return (
+   
     <div  data-aos="fade-up"  className="  border rounded-2xl  mb-5 bg-base-100 shadow-2xl flex flex-col">
       <figure >
         <img className="h-[250px]  w-full pt-6 px-6" src={img} alt="Home" />
@@ -34,14 +45,7 @@ const Card = ({ data }) => {
           
           
         </div>
-        {/* <div className="">
-          <h2 className="text-xl font-bold">Facilities : </h2>
-         <ul className="list-disc list-inside flex-grow">
-         {
-            facilities.map((f,i) => <li key={i} className="">{f}</li>)
-          }
-         </ul>
-        </div> */}
+     
         
         <div className="card-actions ">
           <Link to='/property'>

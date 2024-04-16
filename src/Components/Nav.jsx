@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './Nav.css'
 import 'animate.css';
@@ -15,32 +15,39 @@ const Nav = () => {
  
 
   const navLinks = (
-    <>
-      <li  >
-        <NavLink className={'btn btn-ghost text-lg text-white font-bold'}  to="/">Home</NavLink>
+    < >
+      <li   className="z-40">
+        <NavLink className={'btn btn-ghost text-lg text-black lg:text-white font-bold'}  to="/">Home</NavLink>
       </li>
-      <li >
-        <NavLink className={'btn btn-ghost text-lg text-white font-bold'} to="/login">Login</NavLink>
+      {/* <li >
+        <NavLink className={'btn btn-ghost text-lg md:text-white font-bold'} to="/login">Login</NavLink>
+      </li> */}
+      <li className="z-40">
+        <NavLink className={'btn btn-ghost text-lg text-black lg:text-white font-bold'} to="/register">Register</NavLink>
       </li>
-      <li >
-        <NavLink className={' btn btn-ghost text-lg text-white font-bold'} to="/update">Update Profile</NavLink>
+      <li className="z-40">
+        <NavLink className={' btn btn-ghost text-lg text-black lg:text-white font-bold'} to="/update">Update Profile</NavLink>
       </li>
-      <li >
-        <NavLink className={' btn btn-ghost text-lg text-white font-bold'} to="/maps">Our Location</NavLink>
+      <li className="z-40">
+        <NavLink className={' btn btn-ghost text-lg text-black lg:text-white font-bold'} to="/licence">Licence</NavLink>
       </li>
+      {/* <li >
+        <NavLink className={' btn btn-ghost text-lg text-black md:text-white font-bold'} to="/maps">Our Location</NavLink>
+      </li> */}
     </>
   );
 
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        // toast("Logged Out !!!")
+        
+        // toast("Logged Out !!!");
         alert("Logged Out!!!");
       })
       .catch((error) => console.log(error));
   };
   return (
-    <nav className="navbar animate__animated animate__fadeInUp  bg-[#393D45] px-4 py-5  text-white mb-8">
+    <nav className="navbar animate__animated animate__fadeInUp  bg-[#393D45] px-4 py-5  text-white mb-24 md:mb-12 lg:mb-8">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -61,7 +68,7 @@ const Nav = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-40 p-2 shadow bg-base-100 rounded-box w-52"
           >
             {navLinks}
           </ul>

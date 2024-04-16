@@ -1,14 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGoogle } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 const Login = () => {
 
     const { handleLogin, googleLogin, githubLogin } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Login | Comfort Estate";
+  }, [])
   // console.log(location)
 
     const handleLoginSubmit = e => {
@@ -20,7 +26,9 @@ const Login = () => {
         
         handleLogin(email, password)
         .then((result) => {
-          console.log(result.user)
+          console.log(result.user);
+          alert("Successfully Login!!!");
+          // toast("Successfully Login!!!");
          return navigate(location?.state ? location.state : '/')
         })
         .catch(error => toast(error.message));
@@ -30,13 +38,21 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
-        .then(result => console.log(result.user))
+        .then(result => {
+          console.log(result.user)
+          return navigate(location?.state ? location.state : '/')
+        }
+          )
         .catch(error => console.log(error))
     }
 
     const handleGithubLogin = () => {
         githubLogin()
-        .then(result => console.log(result.user))
+        .then(result => {
+          console.log(result.user)
+          return navigate(location?.state ? location.state : '/')
+        }
+          )
         .catch(error => console.log(error))
     }
 
@@ -81,10 +97,16 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
-         <div className="px-8 mb-4 space-x-4">
+          <p className="text-lg font-semibold text-center mb-4">-------Sign in With-------</p>
+         <div className="px-8 mb-4 space-x-4 flex justify-center gap-5">
+         <FaGoogle onClick={handleGoogleLogin} className=" btn btn-circle"/>
+         <FaGithub onClick={handleGithubLogin} className=" btn btn-circle"/>
+         
+         </div>
+         {/* <div className="px-8 mb-4 space-x-4">
          <button onClick={handleGoogleLogin} className="btn btn-secondary w-[150px]  font-semibold">Google Login</button>
          <button onClick={handleGithubLogin} className="btn btn-secondary w-[150px]  font-semibold">Github Login</button>
-         </div>
+         </div> */}
             <p className="px-8 pb-6">Dont have any account?? Please <Link className='underline font-bold text-blue-700' to='/register'>Register</Link></p>
         </div>
       </div> 

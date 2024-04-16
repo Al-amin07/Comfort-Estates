@@ -14,7 +14,7 @@ import { EffectFade } from 'swiper/modules';
 const Banner = () => {
   return (
     <Swiper
-      className="h-[650px] mb-24 rounded-2xl animate__animated animate__bounceInLeft"
+      className="h-[650px] mb-24 z-10 rounded-2xl animate__animated animate__bounceInLeft"
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
       spaceBetween={50}

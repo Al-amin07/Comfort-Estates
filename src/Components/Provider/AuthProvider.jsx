@@ -60,11 +60,11 @@ const AuthProvider = ({children}) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            console.log('On Auth Is Called!!', currentUser)
+            // console.log('On Auth Is Called!!', currentUser)
             if(currentUser){
                 setName(currentUser.displayName);
                 setPhoto(currentUser.photoURL);
-                console.log(user.displayName, user.photoURL)
+                // console.log(user.displayName, user.photoURL)
             }
             setLoading(false)
         });

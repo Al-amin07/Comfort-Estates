@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
 import { FaRegEye } from "react-icons/fa6";
@@ -12,6 +12,10 @@ const Register = () => {
 
     const { handleRegister, logOut } = useContext(AuthContext)
     const [eyes, setEyes] = useState(true);
+    // const registerNavigate = useNavigate()
+    useEffect(() => {
+      document.title = "Register | Comfort Estate";
+    }, [])
 
     const [pass, setPass] = useState('password')
     const handleRegisterSubmit = e => {
@@ -37,6 +41,7 @@ const Register = () => {
         
         handleRegister(email, password)
         .then(result => {
+          
             console.log(result.user.email)
             updateProfile(auth.currentUser, {
               displayName: name, photoURL: photo
@@ -44,14 +49,20 @@ const Register = () => {
             .then(()=> {
               logOut()
               .then(() => {
-
+                  // toast('Successfully Register!!!')
+                  alert('Successfully Register!!!')
+                  
               })
               .catch(error => console.log(error))
-             alert('SuccessFully Register!!!')
+             
             })
             .catch(error => console.log(error))
-        })
-        .catch(error => console.error(error))
+            
+            
+          }
+        )
+        
+        .catch(error => toast(error.message))
     }
 
     const handleEye = () => {
@@ -132,7 +143,10 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+               
+               <button className="btn btn-primary">Register</button>
+              
+
               </div>
             </form>
            
