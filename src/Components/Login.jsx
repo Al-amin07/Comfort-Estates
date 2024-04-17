@@ -103,11 +103,8 @@ const Login = () => {
          <FaGithub onClick={handleGithubLogin} className=" btn btn-circle"/>
          
          </div>
-         {/* <div className="px-8 mb-4 space-x-4">
-         <button onClick={handleGoogleLogin} className="btn btn-secondary w-[150px]  font-semibold">Google Login</button>
-         <button onClick={handleGithubLogin} className="btn btn-secondary w-[150px]  font-semibold">Github Login</button>
-         </div> */}
-            <p className="px-8 pb-6">Dont have any account?? Please <Link className='underline font-bold text-blue-700' to='/register'>Register</Link></p>
+       
+            <p className="px-8 pb-6 text-xl">Dont have any account?? Please <Link className='underline font-bold text-blue-700' to='/register'>Register</Link></p>
         </div>
       </div> 
       <ToastContainer/>

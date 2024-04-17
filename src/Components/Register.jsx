@@ -150,7 +150,7 @@ const Register = () => {
               </div>
             </form>
            
-              <p className="px-8 pb-6">Already have an account?? Please <Link className='underline font-bold text-blue-700' to='/login'>Login</Link></p>
+              <p className="px-8 pb-6 text-xl">Already have an account?? Please <Link className='underline font-bold text-blue-700' to='/login'>Login</Link></p>
           </div>
         </div> 
         <ToastContainer/>
