@@ -6,8 +6,8 @@ const Price = () => {
         document.title = "Licence | Comfort Estate";
       }, [])
   return (
-   <div className="flex flex-col gap-4 lg:flex-row">
-     <div className="flex flex-1 flex-col md:flex-row gap-5">
+   <div className="flex flex-col gap-4 ">
+     <div className="flex mx-auto flex-col md:flex-row gap-5">
       <div className="bg-[#6A2CAD] space-y-3 text-white text-center px-2 py-8 rounded-xl">
         <h2 className="text-2xl font-bold">Regular Licenses</h2>
         <p className="w-11/12 mx-auto">You <span className="text-red-400 font-semibold">cant charge</span> from your End Product End Users</p>
@@ -19,7 +19,7 @@ const Price = () => {
         <button className="btn bg-[#04AAF5] border-0 w-1/2 mx-auto">Buy Now</button>
       </div>
     </div>
-    <div className="bg-slate-200 px-5 flex-1 py-4 rounded-xl">
+    <div className="bg-slate-200 px-5  py-4 rounded-xl">
         <h2 className="text-2xl font-bold text-red-600">Important License terms </h2>
         <ul className="list-disc list-inside mt-3">
           <li className="text-lg font-medium">Usage License</li>

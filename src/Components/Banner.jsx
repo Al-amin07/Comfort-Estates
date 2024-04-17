@@ -14,7 +14,7 @@ import { EffectFade } from 'swiper/modules';
 const Banner = () => {
   return (
     <Swiper
-      className="h-[650px] mb-24 z-10 rounded-2xl animate__animated animate__bounceInLeft"
+      className="h-[300px] md:h-[460px] lg:h-[650px]  mb-24  rounded-2xl animate__animated animate__bounceInLeft z-[1]"
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
       spaceBetween={50}
@@ -28,11 +28,11 @@ const Banner = () => {
       // onSwiper={(swiper) => console.log(swiper)}
       // onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide>
+      <SwiperSlide className="z-0">
         <img src="/lux6.png" alt="" className="w-full" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/lux2.png" alt="" className="w-full " />
+        <img src="/lux2.png" alt="" className="w-full" />
       </SwiperSlide>
       <SwiperSlide>
         <img src="/lux3.png" alt="" className="w-full" />

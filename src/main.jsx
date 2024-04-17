@@ -16,7 +16,7 @@ import AuthProvider from './Components/Provider/AuthProvider.jsx';
 import Update from './Components/Update.jsx';
 import ViewProperty from './Components/ViewProperty.jsx';
 import Private from './Components/Provider/Private.jsx';
-import Maps from './Components/Maps.jsx';
+
 import Price from './Components/Price.jsx';
 
 
@@ -53,10 +53,7 @@ const router = createBrowserRouter([
           <ViewProperty></ViewProperty>
         </Private>
       },
-      {
-        path: '/maps',
-        element: <Maps></Maps>
-      }
+    
     ]
   }
 ])

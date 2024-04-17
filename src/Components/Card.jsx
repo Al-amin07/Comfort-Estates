@@ -18,7 +18,7 @@ const Card = ({ data }) => {
   const { handleProperty } = useContext(AuthContext);
 
   
-  const { img, estate_title, location, price, description, area } = data;
+  const { img, estate_title, location, price, area } = data;
   // count++;
   // if(count<4 || count> 6){
   //   str = 'fade-left';
@@ -33,9 +33,9 @@ const Card = ({ data }) => {
         <img className="h-[250px]  w-full pt-6 px-6" src={img} alt="Home" />
       </figure>
       <div className=" p-6 space-y-4">
-        <h2 className="card-title text-2xl font-bold">{estate_title}</h2>
+        <h2 className="card-title text-2xl lg:text-3xl font-bold">{estate_title}</h2>
         
-        <p className="text-slate-600">{description}</p>
+        {/* <p className="text-slate-600">{description}</p> */}
         <div className="flex justify-between">
         <p className="text-2xl font-bold">Price : {price}</p>
           <p className="text-lg font-semibold">Area : {area}</p>
